@@ -1,4 +1,4 @@
-const facebookUrl = 'https://www.facebook.com/saudihouse11/?locale=ar_AR';
+const whatsappNumber = '201223358691';
 const products = [
   {title:'عباية الانسياب الكحلي', detail:'قصة واسعة بانسيابية ناعمة', price:2100, image:'./public/products/model-01.jpg'},
   {title:'عباية النعناع الراقي', detail:'تفاصيل مطرزة بلمسة هادئة', price:1750, image:'./public/products/model-02.jpg'},
@@ -17,13 +17,12 @@ grid.innerHTML = products.map((product, index) => `
   <article class="product-card col">
     <div class="product-image-wrap">
       <img src="${product.image}" alt="${product.title} من البيت السعودي" loading="${index < 3 ? 'eager' : 'lazy'}">
-      <span class="product-number">${arabicNumber.format(index + 1)}</span>
     </div>
     <div class="product-meta">
       <div><h3 class="product-title">${product.title}</h3><p class="product-subtitle">${product.detail}</p></div>
       <div class="product-price">${arabicNumber.format(product.price)}<small>جنيه</small></div>
     </div>
-    <a class="product-order" href="${facebookUrl}" target="_blank" rel="noopener noreferrer" aria-label="اطلبي ${product.title} عبر فيسبوك">استفسري عن الموديل <span aria-hidden="true">←</span></a>
+    <a class="product-order" href="https://wa.me/${whatsappNumber}?text=${encodeURIComponent(`مرحبًا، أرغب بالاستفسار عن ${product.title} من البيت السعودي.`)}" target="_blank" rel="noopener noreferrer" aria-label="استفسري عن ${product.title} عبر واتساب">تواصلي عبر واتساب <span aria-hidden="true">←</span></a>
   </article>`).join('');
 
 const menuToggle = document.querySelector('.menu-toggle');
